@@ -1,0 +1,52 @@
+openapi: 3.0.1
+info:
+  title: api
+  version: 0.1.8
+paths:
+  /auth:
+    post:
+      tags:
+        - Authorization
+      summary: "Returns access token for authentication"
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: Username
+                  type: string
+                password:
+                  description: Password
+                  type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                  refreshToken:
+                    type: string
+                  tokenType:
+                    type: string
+                  expiresIn:
+                    type: integer
+                  expiresAt:
+                    type: integer
+                  error:
+                    type: string
+                  errorDescription:
+                    type: string
+        "400":
+          description: Validation error in processing the request. Details can be found in message parameter. Possible reasons include any required parameter missing or with invalid data type.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+servers:
+  - url: https://dev.recx.io

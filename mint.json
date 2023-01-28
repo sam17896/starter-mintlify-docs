@@ -11,6 +11,12 @@
     "light": "#4D9CFF",
     "dark": "#0050B4"
   },
+  "api": {
+    "baseUrl": "https://dev.recx.io",
+    "auth": {
+      "method": "bearer"
+    }
+  },
   "topbarLinks": [
     {
       "name": "Documentation",
@@ -53,12 +59,7 @@
     },
     {
       "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
-      ]
+      "pages": ["api-reference/endpoint/auth"]
     }
   ],
   "footerSocials": {
